@@ -67,5 +67,14 @@ plot(z, col=k_means$cluster, pch=20)
 out_data <- data.frame(final_data, k_means$cluster)
 head(out_data)
 
-
 data_pred_v2 <- data.frame(data_pred_v1, k_means$cluster)
+str(data_pred_v2)
+table(data_pred_v2$k_means.cluster)
+
+cols <- c('X', 'Y', 'k_means.cluster')
+data_pred <- subset(data_pred_v2, select=cols)
+write.csv(data_pred, file = "mongo_data.csv",row.names=FALSE)
+
+str(data_pred_v2)
+write.csv(data_pred_v2, file = "crime_data",row.names=FALSE)
+

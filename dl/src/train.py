@@ -18,7 +18,7 @@ def model1(ip_shape):
     model.add(Dense(31, init='uniform', activation='relu', input_shape=ip_shape[1:]))
     model.add(Dense(20, init='uniform', activation='relu'))
     model.add(Dense(11, init='uniform', activation='softmax'))
-    adam = keras.optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
+    adam = keras.optimizers.Adam(lr=0.01, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=["accuracy"])
     return model
 
@@ -34,6 +34,7 @@ if __name__ == '__main__':
 
     # hours, weekend, k_means.cluster
     crime_sub = crime_data.iloc[:, 4:7]
+
 
     filter_data = []
     for i in range(1, 11):
@@ -65,7 +66,7 @@ if __name__ == '__main__':
     ip_shape = x_train.shape
     model = model1(ip_shape)
 
-    model.fit(x_train, y_train, batch_size=256, verbose=1, epochs=1)
+    model.fit(x_train, y_train, batch_size=256, verbose=1, epochs=30)
     model.save('crime_model.h5')
 
     yhats_train = model.predict(x_test, batch_size=256)
