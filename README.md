@@ -8,5 +8,7 @@ The aim of this project is to predict crime based on a give time. We use an open
 - Keras to build a deep learning model
 - Serve results using the flask API
 
-![alt text](http://url/to/img.png)
-![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
+# Cluster Grids
+![](https://github.com/HackUPCCrew/MachineLearning/blob/master/extras/cluster.png)
+
+Video can be seen [here](https://github.com/HackUPCCrew/MachineLearning/blob/master/extras/app.webm)
