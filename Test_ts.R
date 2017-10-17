@@ -66,7 +66,7 @@ plot(z, col=k_means$cluster, pch=20)
 
 out_data <- data.frame(final_data, k_means$cluster)
 head(out_data)
-
+out_data$hours
 data_pred_v2 <- data.frame(data_pred_v1, k_means$cluster)
 str(data_pred_v2)
 table(data_pred_v2$k_means.cluster)

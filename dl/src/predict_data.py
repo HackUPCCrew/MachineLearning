@@ -2,13 +2,8 @@
 import
 import numpy as np
 
-
-
-
-
 def predict(weekday, model_dict, model):
     gen_hrs = list(range(0, 24))
-
 
     # Weekday
     get_w_lbl = model_dict['lbl_w'].transform([weekday])
